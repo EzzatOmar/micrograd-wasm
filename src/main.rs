@@ -1,8 +1,8 @@
 mod nn;
-mod value_next;
+mod value;
 
 use nn::{MLP};
-use value_next::Value;
+use value::Value;
 
 fn testing_sin() {
   // data sin(x) from -10 to 100
@@ -20,9 +20,9 @@ fn testing_sin() {
   mlp.draw();
   println!("Training...");
 
-  for i in 0..500 {
+  for i in 0..50 {
     let loss = mlp.total_loss(&xs, &ys);
-    mlp.traning_loop(&loss);
+    mlp.training_loop(&loss);
     println!("Loss {}: {}", i, loss.data());
   }
 

@@ -1,4 +1,4 @@
-use crate::value_next::Value;
+use crate::value::Value;
 use rand::{thread_rng, Rng};
 
 #[derive(Clone)]
@@ -172,7 +172,7 @@ impl MLP {
 
   // single traning loop for a given loss value
   // zero grad, backprop, update
-  pub fn traning_loop(&self, total_loss: &Value) {
+  pub fn training_loop(&self, total_loss: &Value) {
     total_loss.zero_grad();
     total_loss.set_gradient(1.0);
     total_loss.backward();
