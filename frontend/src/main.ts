@@ -1,8 +1,7 @@
 import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
-import {greet, testing_sin} from "wasm-game-of-life";
+import {testing_sin} from "micrograd-wasm";
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>

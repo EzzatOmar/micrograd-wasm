@@ -46,15 +46,12 @@ macro_rules! console_log {
 }
 
 #[wasm_bindgen]
-pub fn greet() {
-  alert("Hello, micrograd-wasm!");
-}
-
-#[wasm_bindgen]
 pub fn testing_sin() {
+  // STEP 1: Create a model
   let mlp = MLP::new(1, vec![3, 3, 1]);
   console_log!("Model is created! 1 x 3 x 3 x 1");
   
+  // STEP 2: Setup data sin(x) from -10 to 100
   let mut xs = Vec::new();
   let mut ys = Vec::new();
   for i in -10..10 {
@@ -65,7 +62,7 @@ pub fn testing_sin() {
   }
   console_log!("Setup data for sin {}", &xs[0][0].data());
 
-  
+  // STEP 3: Train the model
   console_log!("Training...");
   for i in 0..10000 {
     let loss = mlp.total_loss(&xs, &ys);
@@ -73,6 +70,7 @@ pub fn testing_sin() {
     console_log!("Loss {}: {}", i, loss.data());
   }
 
+  // STEP 4: Test the model
   console_log!("Model is trained!");
   console_log!("Let's test it!");
 

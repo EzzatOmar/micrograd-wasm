@@ -11,7 +11,7 @@
   "dependencies": {
     "vite-plugin-top-level-await": "^1.4.1",
     "vite-plugin-wasm": "^3.3.0",
-    "wasm-game-of-life": "file:../pkg"
+    "micrograd-wasm": "file:../pkg"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
