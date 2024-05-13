@@ -4,6 +4,7 @@ import tla from "vite-plugin-top-level-await";
 
 export default defineConfig({
     plugins: [wasm(), tla()],
+    base: 'micrograd-wasm/',
     server: {
         open: false
     }
